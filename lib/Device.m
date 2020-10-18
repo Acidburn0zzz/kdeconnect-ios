@@ -86,8 +86,8 @@
         _id=[np objectForKey:@"deviceId"];
         _type=[Device Str2Devicetype:[np objectForKey:@"deviceType"]];
         _name=[np objectForKey:@"deviceName"];
-        _supportedIncomingInterfaces=[np objectForKey:@"SupportedIncomingInterfaces"];
-        _supportedOutgoingInterfaces=[np objectForKey:@"SupportedOutgoingInterfaces"];
+        _supportedIncomingInterfaces=[np objectForKey:@"incomingCapabilities"];
+        _supportedOutgoingInterfaces=[np objectForKey:@"outgoingCapabilities"];
         _links=[NSMutableArray arrayWithCapacity:1];
         _plugins=[NSMutableDictionary dictionaryWithCapacity:1];
         _failedPlugins=[NSMutableArray arrayWithCapacity:1];
@@ -115,8 +115,8 @@
     _id=[np objectForKey:@"deviceId"];
     _name=[np objectForKey:@"deviceName"];
     _type=[Device Str2Devicetype:[np objectForKey:@"deviceType"]];
-    _supportedIncomingInterfaces=[[np objectForKey:@"SupportedIncomingInterfaces"] componentsSeparatedByString:@","];
-    _supportedOutgoingInterfaces=[[np objectForKey:@"SupportedOutgoingInterfaces"] componentsSeparatedByString:@","];
+    _supportedIncomingInterfaces=[np objectForKey:@"incomingCapabilities"];
+    _supportedOutgoingInterfaces=[np objectForKey:@"outgoingCapabilities"];
     [self saveSetting];
     [Link set_linkDelegate:self];
     if ([_links count]==1) {
@@ -233,7 +233,7 @@
             }
         }
     }else if ([self isPaired]){
-        //NSLog(@"recieved a plugin package :%@",[np _Type]);
+        NSLog(@"recieved a plugin package :%@",[np _Type]);
         for (Plugin* plugin in [_plugins allValues]) {
             [plugin onDevicePackageReceived:np];
         }
@@ -365,7 +365,7 @@
     if (![self isReachable]) {
         return;
     }
-    //NSLog(@"device reload plugins");
+    NSLog(@"device reload plugins");
     [_failedPlugins removeAllObjects];
     PluginFactory* pluginFactory=[PluginFactory sharedInstance];
     NSArray* pluginNames=[pluginFactory getAvailablePlugins];

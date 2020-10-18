@@ -29,6 +29,7 @@
 #import "Battery.h"
 #import "Calendar.h"
 #import "Contact.h"
+#import "RunCommand.h"
 
 @interface PluginFactory()
 @property(nonatomic) NSMutableDictionary* _availablePlugins;
@@ -82,7 +83,7 @@
         return nil;
     }
     
-    //NSLog(@"pluginfactory instatiate plugin for device");
+    NSLog(@"pluginfactory instatiate plugin %@ for device", pluginName);
     Class pluginClass=[_availablePlugins valueForKey:pluginName];
     Plugin* plugin;
     if (pluginClass) {
@@ -110,6 +111,7 @@
     [_availablePlugins setValue:[Battery class] forKeyPath:[[Battery getPluginInfo]_pluginName]];
     [_availablePlugins setValue:[Calendar class] forKeyPath:[[Calendar getPluginInfo] _pluginName]];
     [_availablePlugins setValue:[Contact class] forKeyPath:[[Contact getPluginInfo]_pluginName]];
+    [_availablePlugins setValue:[RunCommand class] forKeyPath:[[RunCommand getPluginInfo]_pluginName]];
 }
 
 - (NSArray*) getSupportedIncomingInterfaces
@@ -118,7 +120,9 @@
              PACKAGE_TYPE_CLIPBOARD,
              PACKAGE_TYPE_PING,
              PACKAGE_TYPE_SHARE,
-             PACKAGE_TYPE_CONTACT];
+             PACKAGE_TYPE_CONTACT,
+             PACKAGE_TYPE_RUNCOMMAND
+    ];
 }
 
 - (NSArray*) getSupportedOutgoingInterfaces
@@ -130,7 +134,9 @@
              PACKAGE_TYPE_MOUSEPAD,
              PACKAGE_TYPE_BATTERY,
              PACKAGE_TYPE_CALENDAR,
-             PACKAGE_TYPE_CONTACT];
+             PACKAGE_TYPE_CONTACT,
+             PACKAGE_TYPE_RUNCOMMAND_REQUEST
+    ];
 }
 
 @end

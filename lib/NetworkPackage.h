@@ -39,7 +39,8 @@
 #define PACKAGE_TAG_BATTERY     10
 #define PACKAGE_TAG_CALENDAR    11
 // #define PACKAGE_TAG_REMINDER    12
-#define PACKAGE_TAG_CONTACT     13 
+#define PACKAGE_TAG_CONTACT     13
+#define PACKAGE_TAG_RUNCOMMAND  14
 
 #define UDP_PORT                1716
 #define PORT                    1716    /* Fallback */
@@ -61,6 +62,8 @@
 #define PACKAGE_TYPE_CONTACT    @"kdeconnect.contact"
 
 #define PACKAGE_TYPE_BATTERY_REQUEST    @"kdeconnect.battery.request"
+#define PACKAGE_TYPE_RUNCOMMAND         @"kdeconnect.runcommand"
+#define PACKAGE_TYPE_RUNCOMMAND_REQUEST @"kdeconnect.runcommand.request"
 
 #pragma mark -
 

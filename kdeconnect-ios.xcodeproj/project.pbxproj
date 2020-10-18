@@ -10,6 +10,7 @@
 		1423432424576ED000EF7AAB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1423432324576ED000EF7AAB /* CFNetwork.framework */; };
 		1454C52D2458D4B300FD5074 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1454C52C2458D4B300FD5074 /* Security.framework */; };
 		14566528245C4ADC0011392A /* rsaPrivate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 14566527245C4ADC0011392A /* rsaPrivate.p12 */; };
+		14923B78253C400C00E88E8D /* RunCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 14923B77253C400C00E88E8D /* RunCommand.m */; };
 		4E08A1E81913CF850056EEF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08A1E71913CF850056EEF8 /* Foundation.framework */; };
 		4E08A1EA1913CF850056EEF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08A1E91913CF850056EEF8 /* CoreGraphics.framework */; };
 		4E08A1EC1913CF850056EEF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08A1EB1913CF850056EEF8 /* UIKit.framework */; };
@@ -89,6 +90,8 @@
 		1423432324576ED000EF7AAB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1454C52C2458D4B300FD5074 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		14566527245C4ADC0011392A /* rsaPrivate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsaPrivate.p12; sourceTree = "<group>"; };
+		14923B76253C3FEA00E88E8D /* RunCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RunCommand.h; path = plugins/RunCommand/RunCommand.h; sourceTree = "<group>"; };
+		14923B77253C400C00E88E8D /* RunCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RunCommand.m; path = plugins/RunCommand/RunCommand.m; sourceTree = "<group>"; };
 		14DE5B55244AF00900F7A8C0 /* kdeconnect-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "kdeconnect-ios.entitlements"; sourceTree = "<group>"; };
 		1D62E728E21D599443294128 /* libPods-kdeconnect-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kdeconnect-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E2F71AC6EE495B8966C774 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +221,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14923B75253C3F9F00E88E8D /* RunCommand */ = {
+			isa = PBXGroup;
+			children = (
+				14923B76253C3FEA00E88E8D /* RunCommand.h */,
+				14923B77253C400C00E88E8D /* RunCommand.m */,
+			);
+			name = RunCommand;
+			sourceTree = "<group>";
+		};
 		4E08A1DB1913CF850056EEF8 = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +434,7 @@
 		4EC27541191FCE910057AB0E /* plugins */ = {
 			isa = PBXGroup;
 			children = (
+				14923B75253C3F9F00E88E8D /* RunCommand */,
 				4E0B0CED19772E0B00F1412B /* Contact */,
 				4E38A3A7196CEA90006AE419 /* Calendar */,
 				4E47115C19693B5A00EE5B1D /* Battery */,
@@ -691,6 +704,7 @@
 				4E49BCA91966661800E8AEB7 /* custumRecognizers.m in Sources */,
 				4EA77E0B199095BC002787B8 /* Buttons.m in Sources */,
 				4EC27545191FCEAB0057AB0E /* Plugin.m in Sources */,
+				14923B78253C400C00E88E8D /* RunCommand.m in Sources */,
 				4E85B96C1928F9D600EF3C55 /* DeviceViewController.m in Sources */,
 				4EDD98FD192DAAF800C6AB01 /* MPRIS.m in Sources */,
 				4E08A2351913D1780056EEF8 /* BackgroundService.m in Sources */,
